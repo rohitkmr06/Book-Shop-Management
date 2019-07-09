@@ -1,5 +1,4 @@
 package main;
-
 import java.util.Scanner;
 
 public class BookShop{
@@ -36,20 +35,20 @@ public class BookShop{
         
         int take1,take2;
         int j = 0;
-        Scanner sc = new Scanner(System.in);
+        Scanner s = new Scanner(System.in);
         Cart c1 = new Cart();
-        take1 = sc.nextInt(); //product name
+        take1 = s.nextInt(); //product name
         while(take1 != -1){
-            take2 = sc.nextInt(); //quantity
+            take2 = s.nextInt(); //quantity
             c1.updateCart(itemAvailable[take1-1], take2);
-            take1 = sc.nextInt();
+            take1 = s.nextInt();
             
         }
-        sc.nextLine();
+        s.nextLine();
         System.out.println("type your name to generate the bill :");
-        String s = sc.nextLine();
+        String str = s.nextLine();
         CustomerName cn = new CustomerName();
-        cn.setName(s);
+        cn.setName(str);
         
         c1.finalizeCart(cn.getName());
         System.out.println("-------------------------------------------------");
